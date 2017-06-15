@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+      <div class="col-md-6" style="float:none; margin:0 auto;">
+        <h1  class="text-center">Error {{ errorcode }}</h1>
+        <h2 class="text-center">Sorry, something went wrong. A team of highly trained monkeys has been dispatched to deal with this situation.</h2>
+      </div>
+
+<br>
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body></html>

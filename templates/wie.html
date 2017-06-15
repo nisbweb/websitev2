@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+
+  <div class="row">
+    <div class="col-md-8" style="float:none; margin:0 auto; text-align:center;">
+      <h1  class="text-center">Women in Engineering</h1>
+      <img src="{{ url_for('static', filename='img/wie.gif') }}" alt="" width="80px"><br><br>
+
+      <p style="text-align:justify;">IEEE Women in Engineering (WIE) is one of the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. The IEEE Women in Engineering Student Branch Affinity Group at the National Institute of Engineering was formed on 13th April 2015.</p>
+      <img src="{{ url_for('static', filename='img/wie_pic.jpg') }}" width="100%" alt="">
+
+    </div>
+  </div>
+
+<br><br><hr><br>
+
+  <div class="row">
+    <div class="col-md-5">
+        <h2>Mission and Vision</h2>
+        <p style="text-align:justify;">The mission of IEEE WIE is to facilitate the recruitment and retention of women in technical disciplines globally. IEEE WIE envisions a vibrant community of IEEE women and men collectively using their diverse talents to innovate for the benefit of humanity.</p>
+        <br>
+        <h3>WIE members receive the following benefits</h3>
+        <ul>
+          <li>Access to the electronic WIE Membership Directory;</li>
+          <li>Monthly WIE electronic newsletter which contains career information, reports on WIE and Affinity Group activities, IEEE news, and more;</li>
+          <li>Opportunities to network, volunteer, and participate in local WIE activities.</li>
+        </ul>
+    </div>
+    <div class="col-md-7">
+      <h2>IEEE WIE strives to:</h2><br>
+      <ul>
+        <li>Recognize women’s outstanding achievements in electrical and electronics engineering through IEEE Awards nominations.</li>
+        <li>Organize receptions at major technical conferences to enhance networking and to promote membership in WIE.</li>
+        <li>Advocate women in leadership roles in IEEE governance and career advancement for women in the profession.</li>
+        <li>Provide assistance with the formation of new WIE Affinity Groups and support ongoing activities.</li>
+        <li>Promote IEEE r grade advancement for women to the membership grades of Senior member and Fellow.</li>
+        <li>Facilitate the development of programs and activities that promote the entry into and retention of women in engineering programs.</li>
+        <li>Administer the IEEE Student-Teacher and Research Engineer/Scientist (STAR) Program to mentor young women in junior and high schools.</li>
+      </ul>
+    </div>
+
+  </div>
+
+<br><br><hr><br>
+
+  <div class="row">
+    <div class="col-md-8" style="float:none; margin:0 auto;">
+      <h2 style="text-align:center;">FAQs</h2><br>
+      <div class="list-group">
+
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">How do I join WIE?</h4>
+          <p class="list-group-item-text">By contacting us.</p>
+        </a>
+
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">What is the membership fee?</h4>
+          <p class="list-group-item-text">It is free for IEEE Student Members and Graduate Student Members.</p>
+        </a>
+
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Is WIE only for women?</h4>
+          <p class="list-group-item-text">No. Men are welcomed and encouraged to join WIE.</p>
+        </a>
+
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Who is eligible for WIE membership?</h4>
+          <p class="list-group-item-text">Any IEEE member enrolled in undergraduate or postgraduate course at NIE.</p>
+        </a>
+
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Where is the official website of IEEE WIE?</h4>
+          <p class="list-group-item-text">Here</p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+<br>
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body></html>

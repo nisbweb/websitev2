@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+      <h1 class="text-center">Roadmap</h1>
+<br>
+      <iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1HqlgyvDrwDWCxhstzkrEQBw6aWff1LDVyfwjRbfnwJQ&amp;font=Default&amp;lang=en&amp;initial_zoom=2&amp;height=650" width="100%" height="650" frameborder="0"></iframe>
+
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body></html>

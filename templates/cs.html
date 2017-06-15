@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+
+    <div class="row">
+      <div class="col-md-8" style="float:none; margin:0 auto;">
+        <h1  class="text-center">NIE IEEE Computer Society (NICS)</h1><br>
+
+        <p>IEEE has many societies under its umbrella. One of its largest and most active societies is the IEEE Computer Society. NISB has started its Computer Society chapter two years ago with only 15 members and currently has a whopping a figure of 60 members.
+        Through NISB, IEEE students of NIE can take up student membership for the Computer Society
+        (more on that under FAQs).</p>
+        <img src="{{ url_for('static', filename='img/nics.jpg') }}" width="100%" alt="">
+      </div>
+    </div>
+<br><br><hr><br>
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-6">
+        <h2>Computer Society Member Benifits:</h2><br>
+        <ul>
+          <li>Access to exclusive resources at computer.org</li>
+          <li>Volunteering opportunities at IEEE Computer Society events</li>
+          <li>Discounts at Computer Society events in college level</li>
+        </ul>
+
+      </div>
+      <div class="col-md-4">
+        <h2>Computer Society Events</h2><br>
+        <a href="/events/cs" class="btn btn-default btn-block">View CS Events</a>
+      </div>
+      <div class="col-md-1">
+
+      </div>
+    </div>
+
+<br><br><hr><br>
+
+    <div class="row">
+      <div class="col-md-8" style="float:none; margin:0 auto;">
+        <h2 style="text-align:center;">FAQs</h2><br>
+        <div class="list-group">
+
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">How can I take up Computer Society membership ?</h4>
+            <p class="list-group-item-text">By contacting us.</p>
+          </a>
+
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">When can I take up membership?</h4>
+            <p class="list-group-item-text">You can take up membership any time of the year. However in order to totally utilise your membership, it is better to take during August-September for full year membership and Jan-Feb for half year membership.</p>
+          </a>
+
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Who is eligible for IEEE Computer Society membership?</h4>
+            <p class="list-group-item-text">Any IEEE member enrolled in undergraduate or postgraduate course at NIE.</p>
+          </a>
+
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">What is the membership fee?</h4>
+            <p class="list-group-item-text">For full year membership it is Rs. 550 (can be availed from Aug-Dec for membership till next Dec)<br>
+              For half year membershi it is Rs. 300 (can be availed from Jan-July for membership till Dec)</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">I am not an IEEE member but I want to be a Computer Society member. What to do?</h4>
+              <p class="list-group-item-text">It is mandatory to be a IEEE student member to be able to take up Computer Society membership, otherwise you would be considered as an associate member which costs a lot more than IEEE and CS membership combined.</p>
+            </a>
+
+
+        </div>
+
+      </div>
+    </div>
+
+<br>
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body></html>

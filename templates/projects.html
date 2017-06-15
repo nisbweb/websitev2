@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+      <div class="col-md-6" style="float:none; margin:0 auto;">
+        <h1 class="text-center">Top Projects  </h1><br>
+
+        <p><span class="label label-info">powered by github</span></p>
+        <script type="text/javascript">
+          var listc = []; var listid = [];
+        </script>
+
+        <div class="list-group">
+        {% for x in projects %}
+
+          <a href="{{x['html_url']}}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{ x["name"] }}
+              <small><span class="label label-default" id="{{ x["name"] }}"></span></small>
+            </h4>
+            <p class="list-group-item-text">
+              {% if x['description'] %}
+                {{ x["description"] }}
+              {% endif %}
+            </p>
+          </a>
+        <script type="text/javascript">
+          listc.push("{{ x["url"] }}/commits");
+          listid.push("{{ x["name"] }}");
+        </script>
+        {% endfor %}
+        </div>
+
+        <a href="https://github.com/nisbweb?tab=repositories" target="_blank" class="btn btn-default btn-block">See Repositories on Github</a>
+
+      </div>
+
+
+<br>
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+    <script type="text/javascript">
+    //alert(listid);
+    listc.forEach(git_update);
+    function git_update (item,index){
+      $.get(item, function(data, status){
+              $('#'+listid[index]).html(data.length + " commits")
+      });
+    }
+    </script>
+
+</body></html>

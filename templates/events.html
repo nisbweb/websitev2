@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+<br><br><br>
+      <div class="row">
+        <h1  class="text-center">{{ title }}</h1><br><br>
+
+        <div class="col-md-6">
+        {% for x in events1 %}
+
+          
+          <div class="panel panel-default">
+            <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
+            <div class="panel-body">
+              <img src="{{ x["cover"]["source"] }}" alt="" style="width: calc(100% + 30px); margin:-15px;">
+            </div>
+            <div class="panel-footer">
+              {% if 'ticket_uri' in x %}
+              <a href="{{ x['ticket_uri'] }}" class="btn btn-sm btn-default">Register</a>
+              {% endif %}
+              <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
+            </div>
+          </div>
+
+
+                    <!-- Modal -->
+          <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">{{ x["name"] }}</h4>
+                </div>
+                <div class="modal-body">
+                  {{ x["description"] | replace('\n','<br>' | safe) }}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        {% endfor %}
+        </div>
+
+
+
+
+
+        <div class="col-md-6">
+        {% for x in events2 %}
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
+            <div class="panel-body">
+              <img src="{{ x["cover"]["source"] }}" alt="" style="width: calc(100% + 30px); margin:-15px;">
+            </div>
+            <div class="panel-footer">
+              {% if 'ticket_uri' in x %}
+              <a href="{{ x['ticket_uri'] }}" class="btn btn-sm btn-default">Register</a>
+              {% endif %}
+              <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
+            </div>
+          </div>
+
+          <!-- Modal -->
+<div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ x["name"] }}</h4>
+      </div>
+      <div class="modal-body">
+        {{ x["description"] | replace('\n','<br>' | safe) }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        {% endfor %}
+        </div>
+
+
+      </div>
+
+<br>
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body></html>

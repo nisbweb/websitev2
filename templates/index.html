@@ -1,0 +1,151 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIE IEEE Student Branch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bs.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="">
+
+        <!-- Include Navigation  -->
+        {% include('nav.html') %}
+
+    <!-- Container Start -->
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>What is NISB?</h1><br>
+        <p style="text-align:justify;">NIE IEEE Student Branch provides a platform and opportunties to student members that will help to develop professionally and get identified in their designated fields of interest. In addition to access a range of membership benefits students will be encouraged in building global connections with people who can help you towards your targetted path. Our objective is to bridge the gap between industry and students studying in technology related fields.</p><br>
+        <p><a class="btn btn-default btn-lg">Learn more</a></p>
+      </div>
+
+      <div class="row" style="padding-top:50px; padding-bottom:50px;">
+        <div class="col-md-8">
+          <h2>Latest Updates</h2><br>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#nisbnews" data-toggle="tab" >NISB</a></li>
+            <li class=""><a href="#blrsecnews" data-toggle="tab">Bangalore Section</a></li>
+            <li class=""><a href="#r10news" data-toggle="tab">Region 10</a></li>
+            <li class=""><a href="#ieeenews" data-toggle="tab">IEEE</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content" style="max-height:325px; overflow:hidden;">
+            <div class="tab-pane fade active in" id="nisbnews">
+              <ul>
+                <li>Donec id elit non mi porta gravida at eget metus.</li>
+                <li>Food truck fixie locavore, accusamus mcsweeney's marfa</li>
+                <li>Donec id elit non mi porta gravida at eget metus.</li>
+                <li>Trust fund seitan letterpress, keytar raw denim</li>
+                <li>Food truck fixie locavore, accusamus mcsweeney's marfa</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="blrsecnews">
+              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33079/"></script> <!-- end feedwind code -->
+            </div>
+            <div class="tab-pane fade" id="r10news">
+              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33074/"></script> <!-- end feedwind code -->
+            </div>
+            <div class="tab-pane fade" id="ieeenews">
+              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33077/"></script> <!-- end feedwind code -->
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-4" >
+          <h2>NISB Publications</h2>
+          <br><br>
+          <div class="alert alert-dismissible alert-info">
+            <a href="/" class="btn btn-info">Manas</a> &nbsp;&nbsp;NISB Odd Sem Newsletter
+          </div>
+          <div class="alert alert-dismissible alert-warning">
+            <a href="/" class="btn btn-warning">Jignasa</a> &nbsp;&nbsp;NISB Yearly Magazine
+          </div>
+        </div>
+
+
+      </div>
+
+<hr>
+
+      <div class="row" style="padding-bottom:50px;">
+        <div class="col-md-4">
+          <h2>Top Projects</h2><br>
+          <div class="list-group">
+            <a class="list-group-item">
+              <span class="badge">14 commits</span>
+              Cras justo odio
+            </a>
+            <a class="list-group-item">
+              <span class="badge">2 commits</span>
+              Dapibus ac facilisis in
+            </a>
+            <a class="list-group-item">
+              <span class="badge">1 commits</span>
+              Morbi leo risus
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h2>Latest Blog Posts</h2><br>
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading" id="blog1title">List group item heading <span class="label label-default">Mridul Ganga</span></h4>
+            <p class="list-group-item-text" id="blog1text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading" id="blog2title">List group item heading <span class="label label-default">Yashwanth Chawat</span></h4>
+            <p class="list-group-item-text" id="blog2text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+<hr>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>IEEE Resources</h2>
+          <ul class="pagination pagination-lg">
+            <li><a href="#">IEEE Potentials</a></li>
+            <li><a href="#">IEEE Spectrum</a></li>
+            <li><a href="#">IEEE TV</a></li>
+            <li><a href="#">IEEE Xplore</a></li>
+            <li><a href="#">MyIEEE</a></li>
+            <li><a href="#">IEEE Collabratech</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- Include Footer -->
+      {% include('footer.html') %}
+
+    </div>
+    <!-- Container End -->
+
+    <script src="{{ url_for('static',filename='js/jq.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bs.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+    <script type="text/javascript">
+    blog_update('http://blog.nisb.in/api/get_recent_posts/')
+    function blog_update (link){
+      $.get(link, function(data, status){
+              posts = data["posts"];
+              $('#blog1title').html(posts[0]["title"]);
+              $('#blog2title').html(posts[1]["title"]);
+              $('#blog1text').html(posts[0]["excerpt"]);
+              $('#blog2text').html(posts[1]["excerpt"]);
+      });
+    }
+    </script>
+
+</body></html>
