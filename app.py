@@ -20,6 +20,8 @@ def roadmap():
     return render_template('roadmap.html')
 
 
+
+#this might need to go
 @app.route('/projects')
 def projects():
     secret = '?client_id=1a84d3397645fd06d61b&client_secret=de3ce9a9140fcb03f4118a8d5cb641ac0a79563e'
