@@ -57,7 +57,15 @@ def events_cs():
 
 @app.route('/events/wie')
 def events_wie():
-    return 'Page Under Construction'
+    url = 'https://graph.facebook.com/v2.8/' + 'nieieeewie/events' \
+    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+    print url
+    json1_str = requests.get(url)
+    json1_data = json.loads(json1_str.text)["data"]
+    j1 = json1_data[:len(json1_data):2]
+    j2 = json1_data[1:len(json1_data):2]
+    return render_template('events.html',events1=j1, events2=j2, title="Women in Engineering Events")
 
 @app.route('/ankura')
 def ankura():

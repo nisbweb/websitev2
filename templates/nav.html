@@ -3,7 +3,7 @@
   <div class="container">
     <div class="navbar-header">
       <a href="/" class="navbar-brand">
-        <img src="{{ url_for('static',filename='img/nisb-small.png') }}" class="brand-logo" alt="">
+        <img src="http://cdn.nisb.in/img/logos/nisb-small.png" class="brand-logo" alt="">
       </a>
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
         <span class="icon-bar"></span>
@@ -46,7 +46,7 @@
           <ul class="dropdown-menu" aria-labelledby="eventsnav">
             <li><a href="{{ url_for('events_all') }}">All Events</a></li>
             <li><a href="{{ url_for('events_cs') }}">CS Events</a></li>
-            <li class="disabled"><a href="{{ url_for('events_wie') }}">WIE Events</a></li>
+            <li><a href="{{ url_for('events_wie') }}">WIE Events</a></li>
             <li class="divider"></li>
             <li><a href="{{ url_for('ankura') }}">Ankura</a></li>
             <li><a href="{{ url_for('adroit') }}">Adroit</a></li>
