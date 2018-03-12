@@ -5,7 +5,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    url = 'https://graph.facebook.com/v2.8/' + 'nieieeestudentbranch/events' \
+    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+    json1_str = requests.get(url)
+    json1_data = json.loads(json1_str.text)["data"][:4]
+    url = 'https://graph.facebook.com/v2.12/374095752666883?fields=photos.fields(source).limit(6)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+    json1_str = requests.get(url)
+    json2_data = json.loads(json1_str.text)["photos"]["data"]
+    a=[]
+    for x in json2_data:
+        a.append(x["source"])
+    return render_template('index.html',events=json1_data, glinks=a[:6])
 
 @app.route('/about')
 def about():
@@ -93,7 +104,13 @@ def fg():
 
 @app.route('/gallery')
 def gallery():
-    return render_template('gallery.html')
+    url = 'https://graph.facebook.com/v2.12/374095752666883?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+    json1_str = requests.get(url)
+    json1_data = json.loads(json1_str.text)["photos"]["data"]
+    a=[]
+    for x in json1_data:
+        a.append(x["source"])
+    return render_template('gallery.html',links=a)
 
 @app.route('/contact')
 def contact():

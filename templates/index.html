@@ -14,58 +14,103 @@
         <!-- Include Navigation  -->
         {% include('nav.html') %}
 
+
+        <img class="topimg" width="100%" style="" src="https://cdn.nisb.in/img/website_back.JPG" alt="">
+        <style media="screen">
+        @media only screen and (max-width: 500px) {
+            .topimg {
+
+            }
+          }
+        </style>
+
     <!-- Container Start -->
     <div class="container">
 
       <div class="jumbotron">
         <h1>What is NISB?</h1><br>
-        <p style="text-align:justify;">NIE IEEE Student Branch provides a platform and opportunties to student members that will help to develop professionally and get identified in their designated fields of interest. In addition to access a range of membership benefits students will be encouraged in building global connections with people who can help you towards your targetted path. Our objective is to bridge the gap between industry and students studying in technology related fields.</p><br>
+        <p style="text-align:justify;">NISB is the IEEE student branch of National Institute of Engineering. It is one of the largest and most active student branches of Karnataka.Having been active for a decade, we have been honoured and humbled with numerous awards and accolades over time, including "The Best Student Chapter" of Region 10­ Bangalore. We organize and host a wide range of technical workshops and events. We have our odd sem fest ADROIT and even sem fest ANKURA. Electronika , IPL are few our signature events.</p><br>
         <p><a class="btn btn-default btn-lg" href="about#nisb">Learn more</a></p>
       </div>
 
-      <div class="row" style="padding-top:50px; padding-bottom:50px;">
-        <div class="col-md-8">
-          <h2>Latest Updates</h2><br>
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#nisbnews" data-toggle="tab" >NISB</a></li>
-            <li class=""><a href="#blrsecnews" data-toggle="tab">Bangalore Section</a></li>
-            <!-- <li class=""><a href="#r10news" data-toggle="tab">Region 10</a></li> -->
-            <li class=""><a href="#ieeenews" data-toggle="tab">IEEE</a></li>
-          </ul>
-          <style media="screen">
-            iframe{width: 100%; height: 400px;}
-          </style>
-          <div id="myTabContent" class="tab-content" style=" width:100%; overflow:hidden;">
-            <div class="tab-pane fade active in" id="nisbnews">
-              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33178/"></script> <!-- end feedwind code -->
-            </div>
-            <div class="tab-pane fade" id="blrsecnews">
-              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33079/"></script> <!-- end feedwind code -->
-            </div>
-            <!-- <div class="tab-pane fade" id="r10news">
-              <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33074/"></script>
-            </div> -->
-            <div class="tab-pane fade" id="ieeenews">
-              <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="33077/"></script> <!-- end feedwind code -->
-            </div>
-          </div>
 
-        </div>
+    <div class="row" style="text-align:center;">
+      <h2>NISB Publications</h2>
+      <br><br>
 
 
-        <div class="col-md-4" >
-          <h2>NISB Publications</h2>
-          <br><br>
+        <div class="col-md-6 col-sm-12" >
           <div class="alert alert-dismissible alert-info">
             <a href="https://drive.google.com/open?id=17eZPLkKXLHn11YGx0KO4DuYHpXqB335P" class="btn btn-info">Manas</a> &nbsp;&nbsp;NISB Odd Sem Newsletter
           </div>
+
+        </div>
+        <div class="col-md-6 col-sm-12">
           <div class="alert alert-dismissible alert-warning">
-            <a href="/" class="btn btn-warning">Jignasa</a> &nbsp;&nbsp;NISB Yearly Magazine
+            <a href="#" class="btn btn-warning">Jignasa</a> &nbsp;&nbsp;NISB Yearly Magazine
           </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+        <div class="row" style="margin:40px auto;">
+            <h2 style="text-align:center; margin-bottom:20px;">Latest Events</h2>
+
+          {% for x in events %}
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
+              <div class="panel-body">
+                <img src="{{ x["cover"]["source"] }}" alt="" style="width: calc(100% + 30px); margin:-15px;">
+              </div>
+              <div class="panel-footer">
+                {% if 'ticket_uri' in x %}
+                <a href="{{ x['ticket_uri'] }}" class="btn btn-sm btn-default">Register</a>
+                {% endif %}
+                <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
+              </div>
+            </div>
+
+            </div>
+
+
+                      <!-- Modal -->
+            <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{ x["name"] }}</h4>
+                  </div>
+                  <div class="modal-body">
+                    {{ x["description"] | replace('\n','<br>' | safe) }}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          {% endfor %}
+
+
         </div>
 
+        <div class="row">
+          <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
+            {% for x in glinks %}
+              <img src="{{x}}" alt="" class="img-thumbnail col-md-4" >
+            {% endfor %}
+        </div>
 
-      </div>
 
 <hr>
 
