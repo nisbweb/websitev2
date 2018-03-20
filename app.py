@@ -118,6 +118,17 @@ def contact():
 
 
 
+
+
+
+#redirects
+@app.route('/ank18ipl')
+def ank18ipl():
+    return '<script>window.location = "http://e.nisb.in/register/997011107122033";</script>'
+
+
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', errorcode=404)
